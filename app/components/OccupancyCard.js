@@ -1,0 +1,4 @@
+export default function OccupancyCard({ label, value, time }) {
+  const state = label.toLowerCase();
+  return <section className={`occupancy-card ${state}`} aria-live="polite"><div className="occupancy-top"><span className="eyebrow">LOTAÇÃO PREVISTA</span><span className="live"><i /> Dados estimados</span></div><div className="occupancy-main"><div><span className="occupancy-label">{label}</span><p>{label === 'Lotado' ? 'Está bem cheio. Que tal esperar o próximo?' : label === 'Vazio' ? 'Boa hora para embarcar com tranquilidade.' : 'Movimento moderado. Veja os próximos horários.'}</p></div><div className="gauge" style={{ '--progress': `${value}%` }}><strong>{value}%</strong><small>ocupação</small></div></div><div className="occupancy-foot"><span>● Estimativa da estação</span><span>◷ Horário {time}</span></div></section>;
+}
