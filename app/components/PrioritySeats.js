@@ -1,0 +1,9 @@
+'use client';
+import { useState } from 'react';
+
+export default function PrioritySeats() {
+  const [open, setOpen] = useState(false);
+  return <section className="priority-seats"><button className="priority-toggle" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="priority-seat-map"><span aria-hidden="true">♿</span><span>{open ? 'Ocultar assentos preferenciais' : 'Ver assentos preferenciais'}</span><span className="toggle-chevron">{open ? '−' : '+'}</span></button>
+    {open && <div id="priority-seat-map" className="priority-map"><div className="priority-heading"><div><h3>Área preferencial</h3><p>Referência visual do interior do vagão</p></div><span className="priority-badge">◇ Prioritário</span></div><div className="carriage" role="img" aria-label="Ilustração de um vagão com assentos preferenciais destacados nas extremidades"><span className="car-door">PORTA</span><div className="seat-row"><span className="seat preferred-seat">♿</span><span className="seat">●</span><span className="seat">●</span><span className="seat">●</span><span className="seat preferred-seat">♿</span></div><div className="car-aisle">CORREDOR</div><div className="seat-row"><span className="seat preferred-seat">◇</span><span className="seat">●</span><span className="seat">●</span><span className="seat">●</span><span className="seat preferred-seat">◇</span></div><span className="car-door">PORTA</span></div><div className="seat-legend"><span><i className="seat-dot preferred-dot" /> Assento preferencial</span><span><i className="seat-dot" /> Assento comum</span></div><p className="seat-note">Ilustração genérica. A posição e a disponibilidade dos assentos variam por trem e não são informadas em tempo real.</p></div>}
+  </section>;
+}
