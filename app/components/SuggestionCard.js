@@ -1,0 +1,1 @@
+export default function SuggestionCard({ best, onChoose }) { return <aside className="suggestion"><div className="suggestion-icon">✦</div><div><span className="eyebrow">MELHOR HORÁRIO</span><p>Saia às <strong>{best.time}</strong> e encontre o trem mais vazio.</p></div><button onClick={onChoose} aria-label={`Escolher horário ${best.time}`}>↗</button></aside>; }
